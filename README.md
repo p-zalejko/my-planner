@@ -1,14 +1,18 @@
-# Notes
+# Sample Quarkus and Kotlin project
+- http://quarkus.io
+- https://kotlinlang.org/
 
-# GraalVM installation
+# How to build
 
-Use <a href="https://sdkman.io/">SDKMAN</a> for managing all Java version on your PC:
-- ``sdk list java`` gives you a list of avaialable Java versions
-- ``sdk install java <version`` installs a selected Java. For example: ``sdk install java 19.1.1-grl``
+- Compile the project: 
 
-Ones the GraalVM is installed  you might need <a href="https://www.graalvm.org/docs/reference-manual/aot-compilation/">native image</a>:
-- go to the ``~/.sdkman/candidates/java/<graalvm-version>/bin``
-- execute: ``./gu install native-image``
+``mvn package -Pnative -Dnative-image.docker-build=true``
 
-# Quarkus and Kotlin - hello world
-https://github.com/p-zalejko/my-planner/tree/v0.0.2
+- Build a docker image:
+
+``docker build -f src/main/docker/Dockerfile.native -t pzalejko/my-planner .``
+
+- Launch:
+
+``docker run -i --rm -p 8080:8080 pzalejko/my-planner``
+
