@@ -14,3 +14,9 @@ Ones the GraalVM is installed  you might need <a href="https://www.graalvm.org/d
 
 # Quarkus and Kotlin - hello world
 https://github.com/p-zalejko/my-planner/tree/v0.0.2
+
+
+# Integration with CircleCI (CI/CD)
+- https://circleci.com/
+- https://circleci.com/integrations/github/
+- https://quarkus.io/blog/quarkus-app-circleci-build/
