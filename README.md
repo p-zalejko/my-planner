@@ -16,3 +16,5 @@
 
 ``docker run -i --rm -p 8080:8080 pzalejko/my-planner``
 
+# More informarion
+See https://p-zalejko.github.io/my-planner/
