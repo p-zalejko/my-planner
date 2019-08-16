@@ -1,4 +1,6 @@
 # Notes
+Notes taken while working on this project.
+
 
 # GraalVM installation
 
