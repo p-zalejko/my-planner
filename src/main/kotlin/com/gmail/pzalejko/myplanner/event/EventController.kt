@@ -10,6 +10,6 @@ class EventController{
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    fun getAll() = "foo"
+    fun getAll() = "foo bar"
 
 }
