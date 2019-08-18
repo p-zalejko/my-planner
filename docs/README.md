@@ -28,3 +28,7 @@ Ones the GraalVM is installed  you might need [native image](https://www.graalvm
 
 # Issue management
 - [https://github.com/marketplace/gitkraken-glo-boards](https://github.com/marketplace/gitkraken-glo-boards)
+
+# Other tools
+- [https://github.com/JoeDog/siege](https://github.com/JoeDog/siege)
+- 
