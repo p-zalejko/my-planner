@@ -16,7 +16,15 @@ Ones the GraalVM is installed  you might need [native image](https://www.graalvm
 [sample](https://github.com/p-zalejko/my-planner/tree/v0.0.2)
 
 
-# Integration with CircleCI (CI/CD)
+# CI/CD
+## CircleCI
 - [https://circleci.com/](https://circleci.com/)
 - [https://circleci.com/integrations/github/](https://circleci.com/integrations/github/)
 - [https://quarkus.io/blog/quarkus-app-circleci-build/](https://quarkus.io/blog/quarkus-app-circleci-build/)
+
+## Azure Pipelines
+- [https://github.com/marketplace/azure-pipelines](https://github.com/marketplace/azure-pipelines)
+- [sample Java and Docker pipeline](https://github.com/p-zalejko/my-planner/blob/master/.azure/azure-pipeline.yml)
+
+# Issue management
+- [https://github.com/marketplace/gitkraken-glo-boards](https://github.com/marketplace/gitkraken-glo-boards)
