@@ -15,6 +15,9 @@ class EventController {
     @Inject
     lateinit var vertx: Vertx
 
+    @Inject
+    lateinit var service: EventService
+
     @GET
     @Produces(MediaType.SERVER_SENT_EVENTS)
     fun getAll(): Publisher<String> {
