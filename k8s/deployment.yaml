@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-planner
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: my-planner
+  template:
+    metadata:
+      labels:
+        app: my-planner
+    spec:
+      containers:
+        - image: pzalejko/my-planner:latest
+          name: my-planner
