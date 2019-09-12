@@ -15,3 +15,10 @@ spec:
       containers:
         - image: pzalejko/my-planner:latest
           name: my-planner
+          resources:
+            requests:
+              memory: "64Mi"
+              cpu: "250m"
+            limits:
+              memory: "256Mi"
+              cpu: "500m"
