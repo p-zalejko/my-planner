@@ -15,6 +15,7 @@ Ones the GraalVM is installed  you might need [native image](https://www.graalvm
 # Quarkus and Kotlin - hello world
 [sample](https://github.com/p-zalejko/my-planner/tree/v0.0.2)
 
+[Quarkus and MongoDB - First Blood](https://github.com/p-zalejko/my-planner/commit/6b974978c214dadd089fdcb17cbe673bf84289db)
 
 # CI/CD
 ## CircleCI
@@ -31,4 +32,3 @@ Ones the GraalVM is installed  you might need [native image](https://www.graalvm
 
 # Other tools
 - [https://github.com/JoeDog/siege](https://github.com/JoeDog/siege)
-- 
