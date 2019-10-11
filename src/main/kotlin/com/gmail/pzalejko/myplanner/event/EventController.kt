@@ -1,15 +1,15 @@
 package com.gmail.pzalejko.myplanner.event;
 
+import com.mongodb.client.MongoClient
 import io.vertx.axle.core.Vertx
-import org.reactivestreams.Publisher
+import java.util.concurrent.CompletionStage
 import javax.inject.Inject
-import javax.ws.rs.GET
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces
+import javax.ws.rs.*
 import javax.ws.rs.core.MediaType
 
-
 @Path("/events")
+@Produces(MediaType.APPLICATION_JSON)
+@Consumes(MediaType.APPLICATION_JSON)
 class EventController {
 
     @Inject
@@ -18,12 +18,21 @@ class EventController {
     @Inject
     lateinit var service: EventService
 
+    @Inject
+    lateinit var mongodb: MongoClient
+
     @GET
-    @Produces(MediaType.SERVER_SENT_EVENTS)
-    fun getAll(): Publisher<String> {
-        val toPublisherBuilder = vertx.periodicStream(200).toPublisherBuilder()
-        return toPublisherBuilder
-                .map { "hello" }
-                .buildRs()
+    fun getAll(): CompletionStage<List<String>> {
+        return service.getAllEvents()
+    }
+
+    @POST
+    fun addNew(name: EventDto): CompletionStage<Void> {
+        val event = Event(name = name.name)
+        return service.addNew(event)
+    }
+
+    class EventDto {
+        var name: String = ""
     }
 }
