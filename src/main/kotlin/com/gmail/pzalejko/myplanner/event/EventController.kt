@@ -2,6 +2,7 @@ package com.gmail.pzalejko.myplanner.event;
 
 import com.mongodb.client.MongoClient
 import io.vertx.axle.core.Vertx
+import java.util.concurrent.CompletableFuture
 import java.util.concurrent.CompletionStage
 import javax.inject.Inject
 import javax.ws.rs.*
@@ -27,9 +28,10 @@ class EventController {
     }
 
     @POST
-    fun addNew(name: EventDto): CompletionStage<Void> {
+    fun addNew(name: EventDto): CompletionStage<String> {
         val event = Event(name = name.name)
-        return service.addNew(event)
+        val addNew = service.addNew(event)
+        return addNew.thenCompose { d -> CompletableFuture.completedFuture("OK") }
     }
 
     class EventDto {
