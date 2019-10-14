@@ -22,9 +22,14 @@ class EventController {
     @Inject
     lateinit var mongodb: MongoClient
 
+//    @GET
+//    fun getAll(): CompletionStage<List<String>> {
+//        return service.getAllEvents()
+//    }
+
     @GET
-    fun getAll(): CompletionStage<List<String>> {
-        return service.getAllEvents()
+    fun getAll(): String {
+        return "foo"
     }
 
     @POST
