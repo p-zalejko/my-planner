@@ -1,0 +1,14 @@
+name: my-planner
+image: okteto/maven:latest
+command:
+- bash
+resources:
+  requests:
+    memory: "64Mi"
+    cpu: "250m"
+  limits:
+    memory: "2048Mi"
+    cpu: "2000m"
+forward:
+  - 8080:8080
+  - 5005:5005

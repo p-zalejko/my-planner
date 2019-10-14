@@ -32,3 +32,9 @@ Ones the GraalVM is installed  you might need [native image](https://www.graalvm
 
 # Other tools
 - [https://github.com/JoeDog/siege](https://github.com/JoeDog/siege)
+
+# Okteto 
+- setup TND
+--- okteto init --> seledct image okteto/maven:latest
+--- oktekto up
+--- mvn clean package
