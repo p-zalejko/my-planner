@@ -7,8 +7,8 @@ resources:
     memory: "64Mi"
     cpu: "250m"
   limits:
-    memory: "2048Mi"
-    cpu: "2000m"
+    memory: "512Mi"
+    cpu: "1000m"
 forward:
   - 8080:8080
   - 5005:5005
