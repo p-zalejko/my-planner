@@ -21,27 +21,16 @@ open class EventControllerTest {
 
     companion object {
 
-        @JvmStatic
-        private var MONGO: MongodExecutable? = null
-
         @BeforeAll
         @JvmStatic
         internal fun beforeAll() {
-            val version = Version.Main.V4_0
-            val port = 27018
-            val config = MongodConfigBuilder()
-                    .version(version)
-                    .net(Net(port, Network.localhostIsIPv6()))
-                    .cmdOptions(MongoCmdOptionsBuilder().useNoJournal(false).build())
-                    .build()
-            MONGO = MongodStarter.getDefaultInstance().prepare(config)
-            MONGO!!.start()
+            MongoDbConfig.start()
         }
 
         @AfterAll
         @JvmStatic
         internal fun afterAll() {
-            MONGO!!.stop();
+            MongoDbConfig.stop()
         }
     }
 
