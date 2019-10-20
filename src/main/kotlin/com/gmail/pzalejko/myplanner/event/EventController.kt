@@ -1,7 +1,5 @@
 package com.gmail.pzalejko.myplanner.event;
 
-import com.mongodb.client.MongoClient
-import io.vertx.axle.core.Vertx
 import java.util.concurrent.CompletionStage
 import javax.inject.Inject
 import javax.ws.rs.*
@@ -14,13 +12,7 @@ import javax.ws.rs.core.Response
 class EventController {
 
     @Inject
-    lateinit var vertx: Vertx
-
-    @Inject
     lateinit var service: EventService
-
-    @Inject
-    lateinit var mongodb: MongoClient
 
     @GET
     fun getAll(): CompletionStage<List<String>> {
