@@ -17,6 +17,9 @@ Ones the GraalVM is installed  you might need [native image](https://www.graalvm
 
 [Quarkus and MongoDB - First Blood](https://github.com/p-zalejko/my-planner/tree/v0.0.3)
 
+[Quarkus and JWT - we are safe now](https://github.com/p-zalejko/my-planner/tree/v0.0.4)
+
+
 # Create RSA keys
 If you need RSA keys then you can generate them in the following way:
 - ```openssl genrsa -out private.pem 2048``` 
