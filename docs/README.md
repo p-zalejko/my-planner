@@ -17,6 +17,14 @@ Ones the GraalVM is installed  you might need [native image](https://www.graalvm
 
 [Quarkus and MongoDB - First Blood](https://github.com/p-zalejko/my-planner/tree/v0.0.3)
 
+# Create RSA keys
+If you need RSA keys then you can generate them in the following way:
+- ```openssl genrsa -out private.pem 2048``` 
+- ```openssl rsa -in private.pem -pubout -outform PEM -out publicKey.pem```
+- ```openssl pkcs8 -topk8 -inform PEM -in private.pem -out privateKey.pem -nocrypt```
+
+Use generated ```privateKey.pem``` and ```publicKey.pem```
+
 # CI/CD
 ## CircleCI
 - [https://circleci.com/](https://circleci.com/)
@@ -27,14 +35,26 @@ Ones the GraalVM is installed  you might need [native image](https://www.graalvm
 - [https://github.com/marketplace/azure-pipelines](https://github.com/marketplace/azure-pipelines)
 - [sample Java and Docker pipeline](https://github.com/p-zalejko/my-planner/blob/master/.azure/azure-pipeline.yml)
 
-# Issue management
-- [https://github.com/marketplace/gitkraken-glo-boards](https://github.com/marketplace/gitkraken-glo-boards)
+
+# Development platforms
+## Okteto 
+You can create a small cluster at https://cloud.okteto.com. It allows for launching at testing applications directly in Kubernetes:irectly in Kubernetes 
+- install CLI ```curl https://get.okteto.com -sSfL | sh```
+- setup the project ```okteto init```
+  - select the base image (in my case it's maven): ```okteto/maven:latest```
+- launch ```oktekto up```
+- launch the app in dev mode: ```mvn package quarkus:dev```
+- open your app at Okteto: ```https://<APP>.cloud.okteto.net/```
+
+## RedHat OpenShift
+You can launch OpenShift 4.x on you laptop. Visit https://cloud.redhat.com/ and:
+- download CodeReady Containers
+- install by executing ```crc setup```
+- launch a web console by executing ```crc console```
 
 # Other tools
 - [https://github.com/JoeDog/siege](https://github.com/JoeDog/siege)
 
-# Okteto 
-- setup TND
---- okteto init --> seledct image okteto/maven:latest
---- oktekto up
---- mvn clean package
+# Issue management
+- [https://github.com/marketplace/gitkraken-glo-boards](https://github.com/marketplace/gitkraken-glo-boards)
+
