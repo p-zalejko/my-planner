@@ -23,7 +23,7 @@ open class GreetingResource {
     @GET
     @Produces(MediaType.TEXT_PLAIN)
     @PermitAll
-    fun hello(@Context ctx: SecurityContext): String {
+    open fun hello(@Context ctx: SecurityContext): String {
         val callerName = ctx.userPrincipal?.name ?: "unknown"
         return "hello $callerName"
     }
@@ -32,7 +32,7 @@ open class GreetingResource {
     @Path("/protected")
     @Produces(MediaType.TEXT_PLAIN)
     @RolesAllowed(value = ["Echoer", "Subscriber"])
-    fun helloProtected(@Context ctx: SecurityContext): String {
+    open fun helloProtected(@Context ctx: SecurityContext): String {
         val callerName = ctx.userPrincipal?.name ?: "unknown"
         return "hello $callerName"
     }
