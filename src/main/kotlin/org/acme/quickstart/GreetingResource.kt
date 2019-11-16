@@ -1,5 +1,7 @@
 package org.acme.quickstart;
 
+import com.gmail.pzalejko.myplanner.event.calendarclient.google.GoogleCalendarClient
+import com.google.api.services.calendar.model.Event
 import javax.annotation.security.PermitAll
 import javax.enterprise.context.RequestScoped
 import javax.ws.rs.GET;
@@ -35,5 +37,13 @@ open class GreetingResource {
     open fun helloProtected(@Context ctx: SecurityContext): String {
         val callerName = ctx.userPrincipal?.name ?: "unknown"
         return "hello $callerName"
+    }
+
+    @GET
+    @Path("/my-events")
+    @Produces(MediaType.TEXT_PLAIN)
+    open fun getEvents(@Context ctx: SecurityContext): MutableList<Event>? {
+        val client = GoogleCalendarClient()
+        return client.getEvents()
     }
 }
