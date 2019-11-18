@@ -56,7 +56,7 @@ You can create a small cluster at https://cloud.okteto.com. It allows for launch
 - open your app at Okteto: ```https://<APP>.cloud.okteto.net/```
 
 ## RedHat OpenShift
-You can launch OpenShift 4.x on you laptop. Visit https://cloud.redhat.com/ and:
+You can launch OpenShift 4.x on you laptop. Visit [https://cloud.redhat.com](https://cloud.redhat.com/) and:
 - download CodeReady Containers
 - install by executing ```crc setup```
 - launch a web console by executing ```crc console```
