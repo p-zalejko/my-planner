@@ -3,18 +3,19 @@
 - https://kotlinlang.org/
 
 # How to build
+In order to build and launch the application you need either [docker](https://www.docker.com/get-started) or [podman](https://podman.io/):
 
 - Compile the project: 
 
-``mvn package -Pnative -Dnative-image.docker-build=true``
+``mvn package -Pnative -Dquarkus.native.container-runtime=podman``
 
-- Build a docker image:
+- Build an image:
 
-``docker build -f src/main/docker/Dockerfile.native -t pzalejko/my-planner .``
+``podman build -f docker/Dockerfile.native -t pzalejko/my-planner .``
 
 - Launch:
 
-``docker run -i --rm -p 8080:8080 pzalejko/my-planner``
+``podman-compose -f docker/docker-compose.yml up``
 
-# More informarion
+# More information
 See https://p-zalejko.github.io/my-planner/
