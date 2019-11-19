@@ -1,4 +1,4 @@
 *
-!target/*-runner
-!target/*-runner.jar
-!target/lib/*
+!app/target/*-runner
+!app/target/*-runner.jar
+!app/target/lib/*
