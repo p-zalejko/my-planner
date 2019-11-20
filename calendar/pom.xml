@@ -15,7 +15,6 @@
     <modules>
         <module>calendar-model</module>
         <module>calendar-client</module>
-        <module>calendar-client-google</module>
     </modules>
 
 </project>
