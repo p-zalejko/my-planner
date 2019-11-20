@@ -6,14 +6,21 @@
 
     <parent>
         <groupId>com.gmail.pzalejko</groupId>
-        <artifactId>calendar</artifactId>
+        <artifactId>event-store</artifactId>
         <version>1.0.0-SNAPSHOT</version>
     </parent>
     <packaging>jar</packaging>
-    <artifactId>calendar-model</artifactId>
+    <artifactId>event-store-core</artifactId>
 
     <build>
         <sourceDirectory>src/main/kotlin</sourceDirectory>
     </build>
 
+    <dependencies>
+        <dependency>
+            <groupId>com.gmail.pzalejko</groupId>
+            <artifactId>event-store-model</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
 </project>

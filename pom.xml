@@ -21,7 +21,7 @@
 
     <modules>
         <module>app</module>
-        <module>calendar</module>
+        <module>event-store</module>
     </modules>
 
     <dependencyManagement>

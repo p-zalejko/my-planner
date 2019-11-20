@@ -1,4 +1,4 @@
-package com.gmail.pzalejko.myplanner.calendar
+package com.gmail.pzalejko.myplanner.eventstore.model
 
 import java.time.Instant
 
