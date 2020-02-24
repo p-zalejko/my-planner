@@ -47,7 +47,8 @@ Use generated ```privateKey.pem``` and ```publicKey.pem```
 
 # Development platforms
 ### K3s and K3d
-See https://github.com/rancher/k3d
+
+See [k3ds](https://github.com/rancher/k3ds) 
 
 ## Okteto 
 You can create a small cluster at https://cloud.okteto.com. It allows for launching at testing applications directly in Kubernetes:irectly in Kubernetes 
