@@ -6,7 +6,8 @@ metadata:
     ingress.kubernetes.io/ssl-redirect: "false"
 spec:
   rules:
-    - http:
+    - host: jaeger.localhost
+      http:
         paths:
           - path: /
             backend:
