@@ -19,6 +19,7 @@ spec:
           name: mongodb
           ports:
             - containerPort: 27017
+              protocol: TCP
           resources:
             requests:
               memory: "64Mi"
