@@ -1,5 +1,4 @@
 #!/bin/bash
 
-mvn clean package -Pnative -Dquarkus.native.container-runtime=podman
+mvn package -Pnative -Dnative-image.docker-build=true
 podman build -f docker/Dockerfile.native -t pzalejko/my-planner .
-podman-compose -f docker/docker-compose-all.yml up
