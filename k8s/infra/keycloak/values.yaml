@@ -1,0 +1,22 @@
+keycloak:
+  persistence:
+
+    # Disable deployment of the PostgreSQL chart
+    deployPostgres: false
+
+    # The database vendor. Can be either "postgres", "mysql", "mariadb", or "h2"
+    dbVendor: postgres
+
+    ## The following values only apply if "deployPostgres" is set to "false"
+
+    # Optionally specify an existing secret
+    #existingSecret: "my-database-password-secret"
+    #existingSecretKey: "password-key in-my-database-secret"
+
+    dbName: keycloak
+    dbHost: postgres
+    dbPort: 5432 # 5432 is PostgreSQL's default port. For MySQL it would be 3306
+    dbUser: postgresadmin
+
+    # Only used if no existing secret is specified. In this case a new secret is created
+    dbPassword: admin123

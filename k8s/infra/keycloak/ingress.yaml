@@ -1,0 +1,15 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: jaeger
+  annotations:
+    ingress.kubernetes.io/ssl-redirect: "false"
+spec:
+  rules:
+    - host: keycloak.localhost
+      http:
+        paths:
+          - path: /
+            backend:
+              serviceName: keycloak-http
+              servicePort: 80
