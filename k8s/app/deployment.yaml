@@ -1,25 +1,28 @@
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: my-planner
-spec:
-  replicas: 1
-  selector:
-    matchLabels:
+  apiVersion: apps/v1
+  kind: Deployment
+  metadata:
+    labels:
       app: my-planner
-  template:
-    metadata:
-      labels:
+    name: my-planner
+  spec:
+    replicas: 1
+    selector:
+      matchLabels:
         app: my-planner
-    spec:
-      containers:
-        - image: pzalejko/my-planner:latest
-          imagePullPolicy: Always
-          name: my-planner
-          resources:
-            requests:
-              memory: "64Mi"
-              cpu: "250m"
-            limits:
-              memory: "256Mi"
-              cpu: "500m"
+    template:
+      metadata:
+        labels:
+          app: my-planner
+      spec:
+        containers:
+          - image: pzalejko/my-planner:latest
+            name: my-planner
+            ports:
+              - containerPort: 8080
+            resources:
+              requests:
+                memory: "64Mi"
+                cpu: "250m"
+              limits:
+                memory: "256Mi"
+                cpu: "500m"

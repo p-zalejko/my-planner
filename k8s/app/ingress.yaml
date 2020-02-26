@@ -1,0 +1,15 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: my-planner
+  annotations:
+    ingress.kubernetes.io/ssl-redirect: "false"
+spec:
+  rules:
+    - host: my.localhost
+      http:
+        paths:
+          - path: /
+            backend:
+              serviceName: my-planner
+              servicePort: 8080
