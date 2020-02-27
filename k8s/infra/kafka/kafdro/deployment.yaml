@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kafdro
+spec:
+  replicas: 1
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      app: kafdro
+  template:
+    metadata:
+      labels:
+        app: kafdro
+    spec:
+      containers:
+        - image: obsidiandynamics/kafdrop:3.23.0
+          name: kafdro
+          env:
+             - name: KAFKA_BROKERCONNECT
+               value: "my-kafka-headless:9092"
+          ports:
+            - containerPort: 9000
+              protocol: TCP
+
+      restartPolicy: Always

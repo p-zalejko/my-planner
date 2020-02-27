@@ -1,0 +1,15 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: kafdro
+  annotations:
+    ingress.kubernetes.io/ssl-redirect: "false"
+spec:
+  rules:
+    - host: kafdro.localhost
+      http:
+        paths:
+          - path: /
+            backend:
+              serviceName: kafdro
+              servicePort: 9000
